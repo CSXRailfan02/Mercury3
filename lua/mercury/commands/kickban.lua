@@ -223,38 +223,23 @@ function callfunc(caller,args)
     end
 
 
-        local ARC = {
-                "weapons/demo_charge_hit_flesh_range3.wav",
-            "weapons/demo_charge_hit_flesh_range2.wav",
-                "weapons/demo_charge_hit_flesh_range1.wav"
-        }
-        local am = table.Random(ARC)
-        for k,v in pairs(player.GetAll()) do 
-            v:SendLua([[util.ScreenShake(LocalPlayer():GetPos(),10,150,0.7,500)]])
-            v:EmitSound(am)
-        end
-
-
-
-
-
-    /*
-    local asnd = "vo/engineer_paincrticialdeath0" .. math.random(1,6) .. ".mp3"
     for k,v in pairs(player.GetAll()) do 
-        v:EmitSound("weapons/tf2_back_scatter_crit.wav")
-        
-            v:EmitSound(asnd)
+        v:EmitSound("weapons/metal_gloves_hit_world3.wav")
+        v:EmitSound("gsgtrainsounds/other/joke/lionel_traintown/traintown_collision.wav")
+        v:SendLua([[util.ScreenShake(LocalPlayer():GetPos(),20,150,1.5,500)]])
+      
         
     end
-    local comment = table.Random(bansounds)
-    timer.Simple(4,function()
+
+        
+    timer.Simple(2, function()
         for k,v in pairs(player.GetAll()) do 
             
-                v:EmitSound(comment)
+                v:EmitSound("gsgtrainsounds/other/joke/lionel_traintown/traintown_fenderbender.wav")
             
         end
     end)
-*/
+
     return true, "heh", true, {Mercury.Config.Colors.Server,caller,Mercury.Config.Colors.Default," has banned ", args[1], " for ", bancolor,timestring," ", Mercury.Config.Colors.Arg ," (", args[3],")"}
 end
 
